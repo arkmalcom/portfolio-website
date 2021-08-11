@@ -1,0 +1,214 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/* Animations */
+
+.typewriter {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .05em solid var(--color-accent);
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation: typing 1.5s steps(20, end), blink-caret .75s step-end infinite;
+  }
+  /* The typing effect */
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+    to {
+        width:100%
+    }
+  }
+  /* The typewriter cursor effect */
+  
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent
+    }
+    50% {
+      border-color: var(--color-accent);
+    }
+  }
+.fade-in-text {
+    animation: fadeIn 2.5s;
+    -webkit-animation: fadeIn 2.5s;
+    -moz-animation: fadeIn 2.5s;
+    -o-animation: fadeIn 2.5s;
+    -ms-animation: fadeIn 2.5s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+/* Theme styling */
+html[data-theme="theme-dark"] {
+    --color-primary: #0d0d0d;
+    --color-secondary: #4d4d4d;
+    --color-tertiary: #1b1b1b;
+    --color-accent: #fa3221;
+    --font-color: #D6DCCE;
+}
+
+html[data-theme="theme-light"] {
+    --color-primary: #D6DCCE;
+    --color-secondary: #777474;
+    --color-tertiary: #d3d3d3;
+    --color-accent: #bd65ff;
+    --font-color: #0d0d0d;
+}
+/* General styles for all pages */
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 72px;
+}
+
+h2, h3 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+body {
+    background-color: var(--color-primary);
+    color: var(--font-color);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+footer {
+    padding: 1.5em;
+    font-size: 24px;
+}
+footer i:hover, footer i:active {
+    color: var(--color-accent)
+}
+
+footer i {
+    font-size: 26px;
+}
+
+footer .list-group-item, footer a {
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--font-color);
+}
+
+footer a:hover, footer a:active, footer a:focus {
+    color: var(--color-secondary);
+}
+
+/* Styles for nav bar and its inputs */
+.nav-item > a {
+    margin-left: 1em;
+    margin-right: 1em;
+    color: var(--font-color);
+}
+
+.nav-item a:focus, .nav-item a:hover {
+    color: var(--color-secondary);
+}
+
+.navbar-nav {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 22px;
+}
+
+.active {
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+}
+
+.navbar .navbar-brand {
+    color: var(--font-color);
+    font-family: 'Style Script', cursive;
+    font-size: 30px;
+    text-align: center;
+    margin: 1em;
+    padding-left: 1em;
+}
+
+/* Button styles */
+.btn-circle {
+    width: 40px;
+    height: 40px;
+    padding: 15px 15px;
+    border-radius: 50px;
+    margin: 7px;
+    font-size: 50px;
+    text-align: center;
+    align-content: center;
+}
+
+.btn-dark {
+    border-color: #D6DCCE;
+}
+
+.btn-light {
+    border-color: #0d0d0d;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--font-color);
+    border-color: var(--color-accent);
+    border-radius: 35px;
+    height: 50px;
+    width: 250px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    line-height: 25px;
+}
+
+.btn-primary > i {
+    padding-left: 15px;
+}
+.btn-primary:focus, .btn-primary:active {
+    background-color: var(--color-accent);
+    border-color: transparent;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    box-shadow: 0px 0px 5px 2px var(--color-accent);
+    border-color: transparent;
+}
+
+/* Other styles */
+.test {
+    background-color: var(--color-tertiary);
+    margin: -5;
+}
+
+.signature {
+    font-family: 'Style Script', cursive;
+    font-size: 32px;
+}
