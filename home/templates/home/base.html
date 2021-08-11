@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" class="theme-dark">
+<html lang="en" class="dark-theme">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,11 +12,11 @@
     {% endblock %}
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}">Malcom Calivar<span style="color: var(--color-accent)">.</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
@@ -44,17 +44,11 @@
           </li>
         </ul>
       </div>
+      <button class="theme-switch" aria-label="toggle theme" onclick="switchTheme()">
+        <i class="fas fa-adjust"></i>
+      </button>
     </div>
   </nav>
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-3 offset-lg-6 col-xs-2">
-                <button type="button" class="btn btn-light btn-circle btn-md" id="light" onclick="setTheme('theme-light')"></button>
-                <button type="button" class="btn btn-dark btn-circle" id="dark" onclick="setTheme('theme-dark')"></button>
-              </div>
-          </div>
-      </div>
-
     {% block content %}
 
     {% endblock %}

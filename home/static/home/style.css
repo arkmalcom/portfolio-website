@@ -5,6 +5,10 @@
 
 /* Animations */
 
+* {
+    transition: background-color 0.6s ease;
+}
+
 .typewriter {
     overflow: hidden;
     /* Ensures the content is not revealed until the animation */
@@ -70,7 +74,7 @@
     100% {opacity:1;}
   }
 /* Theme styling */
-html[data-theme="theme-dark"] {
+html[data-theme="dark-theme"] {
     --color-primary: #0d0d0d;
     --color-secondary: #4d4d4d;
     --color-tertiary: #1b1b1b;
@@ -78,7 +82,7 @@ html[data-theme="theme-dark"] {
     --font-color: #D6DCCE;
 }
 
-html[data-theme="theme-light"] {
+html[data-theme="light-theme"] {
     --color-primary: #D6DCCE;
     --color-secondary: #777474;
     --color-tertiary: #d3d3d3;
@@ -132,11 +136,28 @@ footer a:hover, footer a:active, footer a:focus {
 }
 
 /* Styles for nav bar and its inputs */
+
+.theme-switch {
+    width: 25px;
+    background-color: transparent;
+    border: transparent;
+    color: var(--font-color)
+  }
+.theme-switch i {
+    margin: 0 0 0 0;
+    padding: 0 0 10px 0;
+    font-size: 24px;
+}
+
 .nav-item > a {
     margin-left: 1em;
     margin-right: 1em;
     color: var(--font-color);
 }
+
+.navbar-toggler-icon {
+    background-image: none;
+  }
 
 .nav-item a:focus, .nav-item a:hover {
     color: var(--color-secondary);
@@ -157,8 +178,8 @@ footer a:hover, footer a:active, footer a:focus {
     font-family: 'Style Script', cursive;
     font-size: 30px;
     text-align: center;
-    margin: 1em;
-    padding-left: 1em;
+    margin: .5em;
+    padding-left: .5em;
 }
 
 /* Button styles */
