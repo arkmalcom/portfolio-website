@@ -80,6 +80,7 @@ html[data-theme="dark-theme"] {
     --color-tertiary: #1b1b1b;
     --color-accent: #fa3221;
     --font-color: #D6DCCE;
+    --font-accent: #959191;
 }
 
 html[data-theme="light-theme"] {
@@ -88,6 +89,7 @@ html[data-theme="light-theme"] {
     --color-tertiary: #fff9f9;
     --color-accent: #b657ff;
     --font-color: #0d0d0d;
+    --font-accent: #6d6d6d;
 }
 /* General styles for all pages */
 h1 {
@@ -120,6 +122,7 @@ body {
 footer {
     padding: 1.5em;
     font-size: 24px;
+    border-top: 1px solid var(--color-secondary);
 }
 footer i:hover, footer i:active {
     color: var(--color-accent)
@@ -137,8 +140,12 @@ footer .list-group-item, footer a {
     color: var(--font-color);
 }
 
-footer a:hover, footer a:active, footer a:focus {
-    color: var(--color-secondary);
+a {
+    color: var(--font-color);
+}
+
+a:hover, a:active, a:focus {
+    color: var(--font-accent);
 }
 
 /* Styles for nav bar and its inputs */
@@ -153,6 +160,7 @@ footer a:hover, footer a:active, footer a:focus {
     margin: 0 0 0 0;
     padding: 0 0 10px 0;
     font-size: 24px;
+    vertical-align: middle;
 }
 
 .nav-item > a {
@@ -166,7 +174,7 @@ footer a:hover, footer a:active, footer a:focus {
   }
 
 .nav-item a:focus, .nav-item a:hover {
-    color: var(--color-secondary);
+    color: var(--font-accent);
 }
 
 .navbar-nav {
@@ -227,6 +235,7 @@ footer a:hover, footer a:active, footer a:focus {
 
 .btn-primary > i {
     padding-left: 15px;
+    vertical-align: middle;
 }
 .btn-primary:focus, .btn-primary:active {
     background-color: var(--color-accent);
@@ -265,9 +274,27 @@ footer a:hover, footer a:active, footer a:focus {
     font-size: 32px;
 }
 
+
+/* Image styles */
 .custom-img {
     width: auto;
     height: auto;
     max-width: 100%;
     max-height: 100%;
+}
+
+.banner-img-container {
+    border-bottom: 3px solid var(--color-accent);
+    border-radius: 31px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.banner-img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }

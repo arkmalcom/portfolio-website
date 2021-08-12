@@ -4,12 +4,34 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container section">
+    {% if post.banner_img != null %}
+    <div class="row">
+        <div class="banner-img-container">
+            <img class="img-responsive banner-img" src="{% static 'home/img/'|add:post.banner_img %}" />
+        </div>
+    </div>
+    {% endif %}
     <div clas="row">
-        <div class="col">
+        <div class="col text-center">
             <h1>{{post.title}}</h1>
         </div>
     </div>
+    <div class="row">
+        <div class="col text-center">
+            <h3>By: {{post.author}}</h3>
+        </div>
+        <div class="col text-center">
+            <h3>Published: {{post.date_published}}</h3>
+        </div>
+    </div>
+    {% if post.repo_link != null %}
+    <div class="row">
+        <div class="col text-center">
+            <a href={{post.repo_link}} target="_blank"><button class="btn btn-primary">Source Code <i class="fas fa-arrow-right"></i></button></a>
+        </div>
+    </div>
+    {% endif %}
     <div class="row">
         <div class="col">
             {{post.body|safe}}
