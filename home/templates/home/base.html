@@ -18,6 +18,9 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
       </button>
+      <button class="theme-switch" aria-label="toggle theme" onclick="switchTheme()">
+        <i class="fas fa-adjust"></i>
+      </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
@@ -44,9 +47,6 @@
           </li>
         </ul>
       </div>
-      <button class="theme-switch" aria-label="toggle theme" onclick="switchTheme()">
-        <i class="fas fa-adjust"></i>
-      </button>
     </div>
   </nav>
     {% block content %}
@@ -64,7 +64,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3 offset-md-6 col-sm-3">
-                    <p class="signature">Malcom Calivar<span style="color: var(--color-accent)">.</span></p>
+                    <h3 class="signature">Malcom Calivar<span style="color: var(--color-accent)">.</span></h3>
                     <div class="row">
                         <div class="col-3">
                             <a href="https://www.linkedin.com/in/malcom-calivar/"><i class="fab fa-linkedin"></i></a>

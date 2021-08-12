@@ -9,23 +9,66 @@
         </div>
         <div class="col-sm-2 col-md-6">
             <div class="row">
-                <div class="col-md-9 col-sm-4">
+                <div class="col-lg-9 col-sm-4 col-md-12">
                     <h1 class="fade-in-text">Web Development<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
                     <h1 class="typewriter">Data science<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
                 </div>
             </div>            
             <p>Bitch I do it all.</p>
-            <p>I'm not the asian man in the picture.</p>
             <p>I'm not sold on this font.</p>
             <button class="btn btn-primary">Slap That Hire Button <i class="fas fa-arrow-right"></i></button>
         </div>
     </div>
 </div>
-<div class="container-fluid test">
+<div class="container-fluid section">
     <div class="row">
         <div class="col">
-            <h1>Showcase stuff here.</h1>
+            <h1>Data Science Projects<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
         </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1 style="text-align: right;">Web development projects<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
+        </div>
+    </div>
+    <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <img src="{% static 'home/img/apecmdb.png' %}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        ApecMDB
+                    </h5>
+                    <p class="card-text">A school project that consumes a public movie API to create a movie database.</p>
+                </div>
+            </div>            
+        </div>
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <img src="{% static 'home/img/nutrinfo.png' %}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Nutrinfo
+                    </h5>
+                    <p class="card-text">A personal project utilizing a Nutrition API to provide nutrient info for food.</p>
+                </div>
+            </div>            
+        </div>
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <img src="{% static 'home/img/recetapec.png' %}" class="card-img-top img-responsive">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Recetapec
+                    </h5>
+                    <p class="card-text">A school project that consumes a recipe API.</p>
+                </div>
+            </div>            
+        </div>
+    </div>
     </div>
 </div>
 {% endblock %}

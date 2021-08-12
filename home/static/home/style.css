@@ -83,21 +83,27 @@ html[data-theme="dark-theme"] {
 }
 
 html[data-theme="light-theme"] {
-    --color-primary: #D6DCCE;
-    --color-secondary: #777474;
-    --color-tertiary: #d3d3d3;
-    --color-accent: #bd65ff;
+    --color-primary: #f6f0f0;
+    --color-secondary: #ece6e6;
+    --color-tertiary: #fff9f9;
+    --color-accent: #b657ff;
     --font-color: #0d0d0d;
 }
 /* General styles for all pages */
 h1 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 72px;
+    font-size: 68px;
 }
 
 @media (max-width: 767px) {
     h1 {
         font-size: 36px;
+    }
+}
+
+@media (max-width: 925px) {
+    h1 {
+        font-size: 56px;
     }
 }
 
@@ -233,8 +239,23 @@ footer a:hover, footer a:active, footer a:focus {
     border-color: transparent;
 }
 
+/* Card styles */
+.card {
+    color: var(--font-color);
+    background-color: var(--color-secondary);
+    margin-top: .5em;
+}
+
+.card-title {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.card-text {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 /* Other styles */
-.test {
+.section {
     background-color: var(--color-tertiary);
     margin: -5;
 }
