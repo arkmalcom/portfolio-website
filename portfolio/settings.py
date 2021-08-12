@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-r&hvq=lk-$^1o+gwaixi00u*l#23$96n%$zwdv!hz8hp3&x+t@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'arkmalcom.pythonanywhere.com',
+    'localhost',
+    ]
 
 
 # Application definition
@@ -121,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/arkmalcom/portfolio-website/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
