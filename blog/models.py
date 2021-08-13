@@ -34,10 +34,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def get_date_elements(self):
-        date_elements = {
-            "year": self.date_published.year,
-            "day": self.date_published.day,
-            "month": self.date_published.month,
-        }
-        return date_elements
+    def get_tags(self):
+        tags = [tag.description for tag in self.tag.all()]
+        return tags

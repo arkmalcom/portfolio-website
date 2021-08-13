@@ -4,69 +4,102 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-sm-2 col-md-6">
+        <div class="col-sm-2 col-lg-6">
             <img class="img-responsive custom-img" src="{% static 'home/img/portrait.png' %}">
         </div>
-        <div class="col-sm-2 col-md-6">
-            <div class="row">
-                <div class="col-lg-9 col-sm-4 col-md-12">
+        <div class="col-sm-2 col-lg-6 d-flex align-items-center flex-wrap">
+            <div class="row d-flex align-self-end">
+                <div class="col">
                     <h1 class="fade-in-text">Web Development<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
                     <h1 class="typewriter">Data science<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
                 </div>
+            </div>
+            <div class="row d-flex align-self-start">
+                <div class="col">
+                    <p>Hi, I'm Malcom. I'm a web developer with a love for data analysis and data science. As a result, my
+                        portfolio website hosts a wide range of projects. Here you'll find everything from web apps to data analysis and
+                        machine learning projects. My blog is a collection of lessons learned from my projects, as well as personal
+                        thoughts.
+                    </p>
+                    <button class="btn btn-primary">Hire Me <i class="fas fa-arrow-right"></i></button>
+                </div>
             </div>            
-            <p>Bitch I do it all.</p>
-            <p>I'm not sold on this font.</p>
-            <button class="btn btn-primary">Slap That Hire Button <i class="fas fa-arrow-right"></i></button>
         </div>
     </div>
 </div>
 <div class="container-fluid section">
-    <div class="row">
-        <div class="col">
-            <h1>Data Science Projects<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
-        </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <h1 style="text-align: right;">Web development projects<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
-        </div>
-    </div>
     <div class="container">
     <div class="row">
         <div class="col">
-            <div class="card" style="width: 20rem;">
-                <img src="{% static 'home/img/apecmdb.png' %}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        ApecMDB
-                    </h5>
-                    <p class="card-text">A school project that consumes a public movie API to create a movie database.</p>
-                </div>
-            </div>            
+            <h1 class="text-start">Data Science Projects<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
+            <p>
+                Data is the currency of the modern world. We base nearly every decision on something we can measure. 
+                It's becoming increasingly important for businesses of any size to be able to efficiently analyze the data produced
+                by their many internal processes. 
+            </p>
         </div>
-        <div class="col">
-            <div class="card" style="width: 20rem;">
-                <img src="{% static 'home/img/nutrinfo.png' %}" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Nutrinfo
-                    </h5>
-                    <p class="card-text">A personal project utilizing a Nutrition API to provide nutrient info for food.</p>
-                </div>
+    <div class="container">
+    <div class = "row">
+        <div class="card-group d-flex justify-content-between flex-wrap">
+            {% for project in projects %}
+            {% if project.showcase == True %}
+            {% if 'Data Science' in project.post.get_tags %}
+            <div class="col-lg-3">
+                <a href="{% url 'post' pk=project.post.pk title=project.post.title|slugify %}">
+                    <div class="card grow mt-2">
+                        <div class="card-header text-center">
+                            <a href="{% url 'post' pk=project.post.pk title=project.post.title|slugify %}"><h3>{{project.title}}</h3></a>
+                        </div>
+                        <img class="img-responsive card-img card-img-top" src="{% static 'home/img/'|add:project.post.banner_img %}">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                <a href={{project.post.repo_link}} target="_blank"><button class="btn btn-secondary">Source Code</button></a>
+                            </h5>
+                            <p class="card-text">{{project.description}}</p>
+                        </div>
+                    </div>
+                </a>
             </div>            
+            {% endif %}      
+            {% endif %}
+            {% endfor %}
         </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="container">
+    <div class="row text-end">
         <div class="col">
-            <div class="card" style="width: 20rem;">
-                <img src="{% static 'home/img/recetapec.png' %}" class="card-img-top img-responsive">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        Recetapec
-                    </h5>
-                    <p class="card-text">A school project that consumes a recipe API.</p>
-                </div>
-            </div>            
+            <h1>Web Development Projects<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
+        </div>
+    <div class="container">
+    <div class = "row">
+            <div class="card-group d-flex justify-content-between flex-wrap">   
+            {% for project in projects %}
+            {% if project.showcase == True %}
+            {% if 'Data Science' not in project.post.get_tags %}
+            <div class="col-lg-3">
+                    <div class="card grow mt-2">
+                        <div class="card-header text-center">
+                            <a href="{% url 'post' pk=project.post.pk title=project.post.title|slugify %}"><h3>{{project.title}}</h3></a>
+                        </div>
+                        <img class="img-responsive card-img card-img-top" src="{% static 'home/img/'|add:project.post.banner_img %}">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                <a href={{project.post.repo_link}} target="_blank"><button class="btn btn-secondary">Source Code</button></a>
+                            </h5>
+                            <p class="card-text">{{project.description}}</p>
+                        </div>
+                    </div>
+            </div>
+            {% endif %}      
+            {% endif %}
+            {% endfor %}
+            </div>
+        </div>
         </div>
     </div>
     </div>

@@ -4,7 +4,7 @@ from django.views.generic import TemplateView, DetailView
 
 # Create your views here.
 class BlogView(TemplateView):
-    template_name = "blog/index.html"
+    template_name = "blog/blog.html"
 
     def get_context_data(self):
         context = super().get_context_data()

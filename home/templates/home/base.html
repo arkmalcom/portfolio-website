@@ -26,7 +26,7 @@
           <li class="nav-item">
             <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
           </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name == 'projects' %}active{% endif %}" href="{% url 'projects' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Projects
             </a>
@@ -34,7 +34,7 @@
             <li><a class="dropdown-item" href="#">Data Science</a></li>
             <li><a class="dropdown-item" href="#">Web Development</a></li>
             <li><a class="dropdown-item" href="#">Others</a></li>
-          </ul>
+          </ul> -->
         </li>
           <li class="nav-item">
             <a class="nav-link {% if request.resolver_match.url_name == 'blog' %}active{% endif %}" href="{% url 'blog' %}">Blog</a>
@@ -55,7 +55,7 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-3">
+                <div class="col-md-3">
                     <h3>Quick links:</h3>
                     <ul class="list-group">
                         <li class="list-group-item"><a href="{% url 'blog' %}">Blog</a></li>
@@ -63,16 +63,16 @@
                         <li class="list-group-item"><a href="{% url 'contact' %}">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 offset-md-6 col-sm-3">
-                    <h3 class="signature">Malcom Calivar<span style="color: var(--color-accent)">.</span></h3>
+                <div class="col-md-3 offset-md-6 mt-5">
+                    <h3 class="signature text-center">Malcom Calivar<span style="color: var(--color-accent)">.</span></h3>
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col text-center">
                             <a href="https://www.linkedin.com/in/malcom-calivar/"><i class="fab fa-linkedin"></i></a>
                         </div>
-                        <div class="col-3">
+                        <div class="col text-center">
                             <a href="https://github.com/arkmalcom"><i class="fab fa-github"></i></a>
                         </div>
-                        <div class="col-3">
+                        <div class="col text-center">
                             <a href="mailto:arkmalcom@gmail.com"><i class="far fa-envelope"></i></a>
                         </div>
                     </div>
