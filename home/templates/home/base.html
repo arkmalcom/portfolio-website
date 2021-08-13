@@ -12,9 +12,9 @@
     {% endblock %}
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg pb-0 pt-0">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'home' %}">Malcom Calivar<span style="color: var(--color-accent)">.</span></a>
+      <a class="navbar-brand px-3" href="{% url 'home' %}">Malcom Calivar<span style="color: var(--color-accent)">.</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
       </button>
@@ -52,7 +52,7 @@
     {% block content %}
 
     {% endblock %}
-    <footer>
+    <footer class="footer mt-auto">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -76,6 +76,14 @@
                             <a href="mailto:arkmalcom@gmail.com"><i class="far fa-envelope"></i></a>
                         </div>
                     </div>
+                </div>
+                <div class="row w-100 text-center" style="border-top: 1px solid var(--color-secondary)">
+                  <div class="col">
+                    <small class="text-muted">Copyright © 2021 Malcom Calivar.</small>
+                    <p><small class="text-muted">Stock images courtesy of <a class="text-muted" style="font-size: 14px;" href="http://pexels.com">
+                      pexels.com
+                    </a></small></p>
+                  </div>
                 </div>
             </div>
         </div>

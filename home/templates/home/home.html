@@ -2,12 +2,11 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
+<div class="bg-image bg-image-top">
+<div class="container-fluid background-container background-container-top">
+<div class="container content-container d-flex align-items-center flex-wrap">
     <div class="row">
-        <div class="col-sm-2 col-lg-6">
-            <img class="img-responsive custom-img" src="{% static 'home/img/portrait.png' %}">
-        </div>
-        <div class="col-sm-2 col-lg-6 d-flex align-items-center flex-wrap">
+        <div class="col">
             <div class="row d-flex align-self-end">
                 <div class="col">
                     <h1 class="fade-in-text">Web Development<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
@@ -16,31 +15,30 @@
             </div>
             <div class="row d-flex align-self-start">
                 <div class="col">
-                    <p>Hi, I'm Malcom. I'm a web developer with a love for data analysis and data science. As a result, my
-                        portfolio website hosts a wide range of projects. Here you'll find everything from web apps to data analysis and
-                        machine learning projects. My blog is a collection of lessons learned from my projects, as well as personal
-                        thoughts.
-                    </p>
                     <button class="btn btn-primary">Hire Me <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>            
         </div>
     </div>
 </div>
+</div>
+</div>
 <div class="container-fluid section">
-    <div class="container">
-    <div class="row">
+    <div class="container content-container pt-5">
+    <div class="row pt-5">
         <div class="col">
             <h1 class="text-start">Data Science Projects<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
             <p>
                 Data is the currency of the modern world. We base nearly every decision on something we can measure. 
                 It's becoming increasingly important for businesses of any size to be able to efficiently analyze the data produced
-                by their many internal processes. 
+                by their many internal processes. As the volume of data and the velocity at which it's generated increases, the pressing
+                need to hire capable data analysits becomes even more urgent. It's no longer sufficient to simply use data, it's now
+                necessary to understand it and transform it for use in decision making and business strategy.
             </p>
         </div>
     <div class="container">
     <div class = "row">
-        <div class="card-group d-flex justify-content-between flex-wrap">
+        <div class="card-group d-flex justify-content-between flex-wrap pt-4">
             {% for project in projects %}
             {% if project.showcase == True %}
             {% if 'Data Science' in project.post.get_tags %}
@@ -50,7 +48,7 @@
                         <div class="card-header text-center">
                             <a href="{% url 'post' pk=project.post.pk title=project.post.title|slugify %}"><h3>{{project.title}}</h3></a>
                         </div>
-                        <img class="img-responsive card-img card-img-top" src="{% static 'home/img/'|add:project.post.banner_img %}">
+                        <img class="img-responsive card-img card-img-top" src="{{project.post.banner_img}}">
                         <div class="card-body">
                             <h5 class="card-title text-center">
                                 <a href={{project.post.repo_link}} target="_blank"><button class="btn btn-secondary">Source Code</button></a>
@@ -66,18 +64,34 @@
         </div>
         </div>
         </div>
+        <div class="container text-center tech-container pt-lg-5 pb-3">
+            <div class="row pt-lg-5">
+                <div class="col pt-5">
+                    <i class="fab fa-python"></i>
+                </div>
+                <div class="col pt-5">
+                    <i class="fab fa-r-project"></i>
+                </div>
+                <div class="col pt-5">
+                    <i class="fas fa-database"></i>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
 </div>
 <div class="container-fluid">
-    <div class="container">
+    <div class="container content-container pt-5">
     <div class="row text-end">
         <div class="col">
             <h1>Web Development Projects<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
+            <p class="text-start">Without the right presentation, even the best product or service will fail to entice its potential audience.
+                Developing simple, responsive, and user-friendly web applications is the best way to grow your brand. 
+            </p>
         </div>
     <div class="container">
     <div class = "row">
-            <div class="card-group d-flex justify-content-between flex-wrap">   
+            <div class="card-group d-flex justify-content-between flex-wrap pt-4">   
             {% for project in projects %}
             {% if project.showcase == True %}
             {% if 'Data Science' not in project.post.get_tags %}
@@ -101,7 +115,36 @@
             </div>
         </div>
         </div>
+        <div class="container text-center tech-container pt-lg-5 pb-3">
+            <div class="row pt-lg-5">
+                <div class="col pt-5">
+                    <i class="fab fa-react"></i>
+                </div>
+                <div class="col pt-5">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <div class="col pt-5">
+                    <i class="fab fa-python"></i>
+                </div>
+                <div class="col pt-5">
+                    <i class="fab fa-php"></i>
+                </div>
+            </div>
+        </div>
     </div>
     </div>
+</div>
+<div class="bg-image bg-image-bottom">
+<div class="container-fluid background-container background-container-bottom">
+    <div class="container content-container d-flex align-items-center pt-5">
+        <div class="row text-center w-100">
+            <div class="col">
+                <h1>Want to know more<span style="color: var(--color-accent); font-family: 'Bebas Neue', cursive;">?</span></h1>
+                <h5 class="pb-4">It's time to make your project a reality.</h5>
+                <button class="btn btn-primary">Contact Me <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 {% endblock %}
