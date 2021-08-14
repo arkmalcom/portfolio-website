@@ -282,6 +282,7 @@ a:hover, a:active, a:focus {
 
 .btn-secondary:focus, .btn-secondary:active {
     background-color: var(--color-accent);
+    box-shadow: 0px 0px 5px 2px var(--color-accent) !important;
     border-color: transparent;
 }
 
@@ -301,6 +302,7 @@ a:hover, a:active, a:focus {
 }
 .btn-primary:focus, .btn-primary:active {
     background-color: var(--color-accent);
+    box-shadow: 0px 0px 5px 2px var(--color-accent) !important;
     border-color: transparent;
 }
 
@@ -347,6 +349,14 @@ a:hover, a:active, a:focus {
     height: auto;
     max-width: 100%;
     max-height: 100%;
+}
+
+.img-blur {
+    box-shadow: -150px 0 15px 15px var(--color-primary) inset;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%; 
+    height: 35vh;
 }
 
 .banner-img-container {
@@ -420,13 +430,13 @@ a:hover, a:active, a:focus {
 }
 
 .form-control {
-    background: var(--color-secondary);
+    background: var(--color-tertiary);
     border: 1px solid var(--color-accent);
     color: var(--font-color);
 }
 
 .form-select {
-    background: var(--color-secondary);
+    background: var(--color-tertiary);
     border: 1px solid var(--color-accent);
     color: var(--font-color);
 }
