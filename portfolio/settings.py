@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from . import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,14 +20,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config.DJANGO_KEY
+SECRET_KEY = 'django-insecure-r&hvq=lk-$^1o+gwaixi00u*l#23$96n%$zwdv!hz8hp3&x+t@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'arkmalcom.pythonanywhere.com',
-    'localhost',
+    'arkmalcom.pythonanywhere.com'
     ]
 
 
@@ -137,8 +135,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Email configuration
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = config.EMAIL_USER
-EMAIL_HOST_PASSWORD = config.EMAIL_PASSWORD
+EMAIL_HOST_USER = 'overlordarkard@gmail.com'
+EMAIL_HOST_PASSWORD = 'sR0tZam0RastA'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
