@@ -23,6 +23,7 @@ class Tag(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
+    description = models.TextField()
     body = RichTextField(blank=True)
     date_published = models.DateField(auto_now_add=True)
     repo_link = models.CharField(max_length=255, blank=True, null=True)
@@ -31,6 +32,9 @@ class Post(models.Model):
     lang = models.CharField(max_length=2, choices=languages, default="EN")
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     tag = models.ManyToManyField(Tag)
+
+    class Meta:
+        ordering = ['date_published']
     
     def __str__(self):
         return self.title

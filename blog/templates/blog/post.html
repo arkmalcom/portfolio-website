@@ -8,7 +8,7 @@
     {% if post.banner_img != null %}
     <div class="row">
         <div class="banner-img-container">
-            <img class="img-responsive banner-img" src="{% static 'home/img/'|add:post.banner_img %}" />
+            <img class="img-responsive banner-img" src="{{post.banner_img.url}}" />
         </div>
     </div>
     {% endif %}

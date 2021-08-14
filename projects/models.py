@@ -4,7 +4,6 @@ from blog.models import Post
 # Create your models here.
 class Project(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField()
     showcase = models.BooleanField(default=False)
     live_demo = models.CharField(max_length=255, null=True, blank=True)
     post = models.OneToOneField(

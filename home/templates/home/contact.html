@@ -2,11 +2,35 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>Contact</h1>
+<div class="bg-image bg-image-top" style="background-image: url('/static/home/img/contact-banner.jpg'); background-size: cover;">
+    <div class="container-fluid background-container-bottom background-container">
+    <div class="container d-flex align-items-center" style="height: 40vh;">
+        <div class="row">
+            <div class="col">
+                <h1 class="fade-in-text">Contact Me<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
+                <p>If you're interested in hiring me, you may contact me via my <a href="https://linkedin.com/malcom-calivar">LinkedIn</a> page, 
+                    or by filling out the form below:
+                </p>         
+            </div>
         </div>
     </div>
+    </div>
+</div>
+
+<div class="container content-container w-75">
+    <form method="POST">
+        <div class="form-group">
+            {% csrf_token %}
+            <label class="form-label pt-4 pb-1" for="id_topic">How can I help you?</label>
+            {{form.topic}}
+            <label class="form-label pt-4 pb-1" for="id_message">Describe your project</label>
+            {{form.message}}
+            <label class="form-label pt-4 pb-1" for="id_name">Your name</label>
+            {{form.name}}
+            <label class="form-label pt-4 pb-1" for="id_email">Your E-mail</label>
+            {{form.email}}
+            <button class="btn btn-primary w-100 mt-4" type="submit">Contact Me <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </form>
 </div>
 {% endblock %}

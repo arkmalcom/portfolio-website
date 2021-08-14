@@ -2,48 +2,81 @@
 {% load static %}
 
 {% block content %}
-<div class="container content-container text-center">
+<div class="bg-image bg-image-top" style="background-image: url('/static/home/img/blog-banner.jpg'); background-size: cover;">
+<div class="container-fluid background-container-bottom background-container">
+<div class="container d-flex align-items-center" style="height: 40vh;">
     <div class="row">
         <div class="col">
-            <h1>Blog</h1>
+            <h1 class="fade-in-text">Blog<span style="color: var(--color-accent); font-family: 'Style Script', cursive;">.</span></h1>
             <p>My blog contains a post for every project I've worked on. 
                 In each article, I talk about the things I learned while working on those projects.
-                
-            </p>
+                I also blog about some of my favorite hobbies, including books and cooking.
+            </p>         
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+    <div class="row pt-3 pt-lg-1">
+        <div class="col-lg-3 col-sm-6 pb-2 pb-lg-0">
+        <div class="category-img">
+            <a href="{% url 'blog-category' tag_filter=1 description_slug='Data Science'|slugify %}">
+            <img class="img-responsive custom-img rounded" src="{% static 'home/img/data-science.jpg'%}">
+            <h2>Data Science</h2></a>
+        </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 pb-2 pb-lg-0">
+            <div class="category-img">
+                <a href="{% url 'blog-category' tag_filter=14 description_slug='Web Development'|slugify %}">
+                <img class="img-responsive custom-img rounded" src="{% static 'home/img/web-development.jpg'%}">
+                <h2>Web Development</h2></a>
+            </div>
+            </div>
+        <div class="col-lg-3 col-sm-6 pb-2 pb-lg-0">
+                <div class="category-img">
+                <a href="{% url 'blog-category' tag_filter=15 description_slug='Books'|slugify %}">
+                <img class="img-responsive custom-img rounded" src="{% static 'home/img/books.jpg'%}">
+                <h2>Books</h2></a>
+                </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 pb-2 pb-lg-0">
+             <div class="category-img">
+                <a href="{% url 'blog-category' tag_filter=16 description_slug='Cooking'|slugify %}">
+                <img class="img-responsive custom-img rounded" src="{% static 'home/img/cooking.jpg'%}">
+                <h2>Cooking</h2></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container content-container">
+    {% for post in posts %}
+<a href="{% url 'post' pk=post.pk title=post.title|slugify %}">
+<div class="container mb-4 mt-2 blog-grow">
+    <div class="row pt-5">
+        <div class="col text-center pt-3">
+            <img class="img-responsive blog-img" src="{{post.card_img.url}}">
         </div>
     </div>
     <div class="row">
-        <div class="card-group d-flex justify-content-start flex-wrap">
-        {% for post in posts %}
-            <div class="col">
-                <div class="card mt-2">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="{% url 'post' pk=post.pk title=post.title|slugify %}">{{post.title}}</a>
-                        </h5>
-                        <p class="card-text">
-                            By: {{post.author}}
-                        </p>
-                        <p class="card-text">
-                            Published: {{post.date_published}}
-                        </p>
+            <div class="col text-center pt-5">
+                {% for tag in post.tag.all %}
+                <a href="{% url 'blog-category' tag_filter=tag.id description_slug=tag.description|slugify %}"><button class="btn btn-secondary mx-1 mt-2">{{tag.description}}</button></a>
+                {% endfor %}
+                <a href="{% url 'post' pk=post.pk title=post.title|slugify %}"><h2 class="pt-3">{{post.title}}</h2></a>
+                <div class="row">
+                    <div class="col-lg-3 offset-lg-3">
+                        <h3 class="pt-2">By: {{post.author}}</h3>
                     </div>
-                    <div class="card-footer">
-                        <small class="card-text">
-                            Tags: 
-                             {% for tag in post.tag.all %}
-                             {% if forloop.last %}
-                             {{tag}}.
-                             {% else %}
-                             {{tag}},
-                             {% endif %} 
-                             {% endfor %}
-                        </small>
+                    <div class="col-lg-3">
+                        <h3 class="pt-2">Published: {{post.date_published}}</h3>
                     </div>
                 </div>
+                <p>{{post.description}}</p>
             </div>
-        {% endfor %}
-        </div>
     </div>
+</div>
+</a>
+    {% endfor %}
 </div>
 {% endblock %}

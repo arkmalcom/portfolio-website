@@ -15,7 +15,7 @@
             </div>
             <div class="row d-flex align-self-start">
                 <div class="col">
-                    <button class="btn btn-primary">Hire Me <i class="fas fa-arrow-right"></i></button>
+                    <a href="{% url 'contact' %}" class="disabled"><button class="btn btn-primary">Hire Me <i class="fas fa-arrow-right"></i></button></a>
                 </div>
             </div>            
         </div>
@@ -48,12 +48,12 @@
                         <div class="card-header text-center">
                             <a href="{% url 'post' pk=project.post.pk title=project.post.title|slugify %}"><h3>{{project.title}}</h3></a>
                         </div>
-                        <img class="img-responsive card-img card-img-top" src="{{project.post.banner_img}}">
+                        <img class="img-responsive card-img card-img-top" src="{{project.post.card_img.url}}">
                         <div class="card-body">
                             <h5 class="card-title text-center">
                                 <a href={{project.post.repo_link}} target="_blank"><button class="btn btn-secondary">Source Code</button></a>
                             </h5>
-                            <p class="card-text">{{project.description}}</p>
+                            <p class="card-text">{{project.post.description}}</p>
                         </div>
                     </div>
                 </a>
@@ -64,7 +64,7 @@
         </div>
         </div>
         </div>
-        <div class="container text-center tech-container pt-lg-5 pb-3">
+        <div class="container text-center tech-container pt-lg-5 pb-5">
             <div class="row pt-lg-5">
                 <div class="col pt-5">
                     <i class="fab fa-python"></i>
@@ -94,18 +94,18 @@
             <div class="card-group d-flex justify-content-between flex-wrap pt-4">   
             {% for project in projects %}
             {% if project.showcase == True %}
-            {% if 'Data Science' not in project.post.get_tags %}
+            {% if 'Web Development' in project.post.get_tags %}
             <div class="col-lg-3">
                     <div class="card grow mt-2">
                         <div class="card-header text-center">
                             <a href="{% url 'post' pk=project.post.pk title=project.post.title|slugify %}"><h3>{{project.title}}</h3></a>
                         </div>
-                        <img class="img-responsive card-img card-img-top" src="{% static 'home/img/'|add:project.post.banner_img %}">
+                        <img class="img-responsive card-img card-img-top" src="{{project.post.card_img.url}}">
                         <div class="card-body">
                             <h5 class="card-title text-center">
                                 <a href={{project.post.repo_link}} target="_blank"><button class="btn btn-secondary">Source Code</button></a>
                             </h5>
-                            <p class="card-text">{{project.description}}</p>
+                            <p class="card-text text-start">{{project.post.description}}</p>
                         </div>
                     </div>
             </div>
@@ -115,7 +115,7 @@
             </div>
         </div>
         </div>
-        <div class="container text-center tech-container pt-lg-5 pb-3">
+        <div class="container text-center tech-container pt-lg-5 pb-5">
             <div class="row pt-lg-5">
                 <div class="col pt-5">
                     <i class="fab fa-react"></i>
@@ -141,7 +141,7 @@
             <div class="col">
                 <h1>Want to know more<span style="color: var(--color-accent); font-family: 'Bebas Neue', cursive;">?</span></h1>
                 <h5 class="pb-4">It's time to make your project a reality.</h5>
-                <button class="btn btn-primary">Contact Me <i class="fas fa-arrow-right"></i></button>
+                <a href="{% url 'contact' %}" class="disabled"><button class="btn btn-primary">Contact Me <i class="fas fa-arrow-right"></i></button></a>
             </div>
         </div>
     </div>
