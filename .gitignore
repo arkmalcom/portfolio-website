@@ -1,7 +1,7 @@
 db.sqlite3
 portfolio/settings.py
 portfolio/__pycache__/
-media/
-static/
+/media/
+/static/
 repaired_db
 db.sqlite3.backup
