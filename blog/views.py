@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from .models import Author, Tag, Post
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
-class BlogView(TemplateView):
+class BlogView(ListView):
+    paginate_by = 4
     model = Post
     fields = "__all__"
     template_name = "blog/blog.html"
@@ -19,5 +20,5 @@ class PostView(DetailView):
 
 def blog_category_view(request, tag_filter, description_slug):
     filtered_posts = Post.objects.all().filter(tag__id=tag_filter)
-    context = { 'posts' : filtered_posts }
+    context = { 'page_obj' : filtered_posts }
     return render(request, 'blog/blog.html', context)
