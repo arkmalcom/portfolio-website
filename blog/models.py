@@ -25,7 +25,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     body = RichTextField(blank=True)
-    date_published = models.DateField(auto_now_add=True)
+    date_published = models.DateField()
     repo_link = models.CharField(max_length=255, blank=True, null=True)
     banner_img = models.ImageField(upload_to="blog/banner_img", blank=True, null=True)
     card_img = models.ImageField(upload_to="blog/card_img", blank=True, null=True)
@@ -34,8 +34,8 @@ class Post(models.Model):
     tag = models.ManyToManyField(Tag)
 
     class Meta:
-        ordering = ['date_published']
-    
+        ordering = ['-date_published']
+
     def __str__(self):
         return self.title
 
